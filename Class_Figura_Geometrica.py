@@ -1,28 +1,37 @@
 import math
+class Figuras_Geometricas:
+  def __init__(self):
+    pass
 
-def cuadrado(lado):
-  area = lado ** 2
-  perimetro = lado ** 4
+class Cuadrado(Figuras_Geometricas):
+  
+  def cuadrado(self, lado):
+    area = lado ** 2
+    perimetro = lado ** 4
 
-  return area, perimetro
+    return area, perimetro
 
-def rectangulo(largo, ancho):
-  area = largo * ancho
-  perimetro = 2 * (largo + ancho)
+class Rectangulo(Figuras_Geometricas):
 
-  return area, perimetro
+  def rectangulo(largo, ancho):
+    area = largo * ancho
+    perimetro = 2 * (largo + ancho)
 
-def circulo(radio):
-  area = math.pi * (radio ** 2)
-  circunferencia = 2 * math.pi * radio
+    return area, perimetro
 
-  return area, circunferencia
+class Circulo(Figuras_Geometricas):
 
-area_cuadrado, perimetro_cuadrado = cuadrado(5)
+  def circulo(radio):
+    area = math.pi * (radio ** 2)
+    circunferencia = 2 * math.pi * radio
+
+    return area, circunferencia
+
+area_cuadrado, perimetro_cuadrado = Cuadrado(5)
 print(f"Area del cuadrado: {area_cuadrado}, Perimetro del cuadrado: {perimetro_cuadrado}")
 
-area_rectangulo, perimetro_rectangulo = rectangulo(4, 7)
+area_rectangulo, perimetro_rectangulo = Rectangulo(4, 7)
 print(f"Area del rectangulo: {area_rectangulo}, Perimetro del rectaqngulo, {perimetro_rectangulo}")
 
-area_circulo, circunferencia_circulo = circulo(3)
+area_circulo, circunferencia_circulo = Circulo(3)
 print(f"Area del circulo: {area_circulo}, Circunferencia del circulo, {circunferencia_circulo}")
